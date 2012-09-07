@@ -1,0 +1,14 @@
+C:\Projects\.NET\ThemeGenerator\ThemeGenerator\bin\ThemeGenerator.dll
+C:\Projects\.NET\ThemeGenerator\ThemeGenerator\bin\ThemeGenerator.pdb
+C:\Projects\.NET\ThemeGenerator\ThemeGenerator\bin\EntityFramework.dll
+C:\Projects\.NET\ThemeGenerator\ThemeGenerator\bin\EntityFramework.xml
+C:\Projects\.NET\ThemeGenerator\ThemeGenerator\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\.NET\ThemeGenerator\ThemeGenerator\obj\Debug\ThemeGenerator.dll
+C:\Projects\.NET\ThemeGenerator\ThemeGenerator\obj\Debug\ThemeGenerator.pdb
+C:\Projects\ThemeGenerator\ThemeGenerator\bin\ThemeGenerator.dll
+C:\Projects\ThemeGenerator\ThemeGenerator\bin\ThemeGenerator.pdb
+C:\Projects\ThemeGenerator\ThemeGenerator\bin\EntityFramework.dll
+C:\Projects\ThemeGenerator\ThemeGenerator\bin\EntityFramework.xml
+C:\Projects\ThemeGenerator\ThemeGenerator\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\ThemeGenerator\ThemeGenerator\obj\Debug\ThemeGenerator.dll
+C:\Projects\ThemeGenerator\ThemeGenerator\obj\Debug\ThemeGenerator.pdb

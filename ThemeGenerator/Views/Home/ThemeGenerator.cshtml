@@ -1,0 +1,95 @@
+﻿@{
+    Layout = null;
+    Models.ThemeData[] themeData = (Models.ThemeData[]) ViewData["theme"];
+    
+}
+
+<UserSettings>
+	<ApplicationIdentity version="8.0"/>
+	<ToolsOptions>
+		<ToolsOptionsCategory name="Environment" RegisteredName="Environment"/>
+	</ToolsOptions>
+	<Category name="Environment_Group" RegisteredName="Environment_Group">
+		<Category name="Environment_FontsAndColors" Category="{1EDA5DD4-927A-43a7-810E-7FD247D0DA1D}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_FontsAndColors" PackageName="Visual Studio Environment Package">
+			<PropertyValue name="Version">2</PropertyValue>
+			<FontsAndColors Version="2.0">
+				<Categories>
+					<Category GUID="{5C48B2CB-0366-4FBF-9786-0BB37E945687}" FontName="PalmOS" FontSize="8" CharSet="0" FontIsDefault="No">
+						<Items>
+							<Item Name="Plain Text" Foreground="0x0000FF00" Background="0x00003700" BoldFont="No"/>
+							<Item Name="Selected Text" Foreground="0x00003700" Background="0x0000FF00" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x00003700" Background="0x00009100" BoldFont="No"/>
+							<Item Name="Current list location" Foreground="0x00A3DBFF" Background="0x01000007" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{9973EFDF-317D-431C-8BC1-5E88CBFD4F7F}" FontName="PalmOS" FontSize="8" CharSet="0" FontIsDefault="No">
+						<Items>
+							<Item Name="Plain Text" Foreground="0x0057C732" Background="0x0017340E" BoldFont="No"/>
+							<Item Name="Selected Text" Foreground="0x00003700" Background="0x0000FF00" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x00003700" Background="0x00009100" BoldFont="No"/>
+							<Item Name="Current list location" Foreground="0x00A3DBFF" Background="0x01000007" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{A27B4E24-A735-4D1D-B8E7-9716E1E3D8E0}" FontName="Monaco" FontSize="9" CharSet="0" FontIsDefault="No">
+						<Items>
+							<Item Name="Plain Text" Foreground="@themeData[0].Foreground" Background="@themeData[0].Background" BoldFont="No"/>
+							<Item Name="Indicator Margin" Foreground="0x02000000" Background="@themeData[0].MarginColor" BoldFont="No"/>
+							<Item Name="Line Numbers" Foreground="@themeData[0].Comment" Background="@themeData[0].Background" BoldFont="No"/>
+							<Item Name="Visible White Space" Foreground="0x00808080" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Comment" Foreground="@themeData[0].Comment" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Compiler Error" Foreground="@themeData[0].Error" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Comment" Foreground="@themeData[1].Comment" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Keyword" Foreground="@themeData[1].Keyword" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Property Name" Foreground="@themeData[1].Main" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Property Value" Foreground="@themeData[1].User" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Selector" Foreground="@themeData[0].Identifier" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS String Value" Foreground="@themeData[1].StringColor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Attribute" Foreground="@themeData[1].Identifier" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Attribute Value" Foreground="@themeData[1].StringColor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Comment" Foreground="@themeData[1].Comment" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Element Name" Foreground="@themeData[1].Main" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Operator" Foreground="@themeData[1].Operator" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Identifier" Foreground="@themeData[0].Foreground" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Keyword" Foreground="@themeData[0].Keyword" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Number" Foreground="@themeData[0].NumberColor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Operator" Foreground="@themeData[0].Operator" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Preprocessor Keyword" Foreground="@themeData[0].Preprocessor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Stale Code" Foreground="0x00808080" Background="0x00C0C0C0" BoldFont="No"/>
+							<Item Name="String" Foreground="@themeData[0].StringColor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="String (C# Verbatim)" Foreground="@themeData[0].Preprocessor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Task List Shortcut" Foreground="0x00FFFFFF" Background="0x02C0C0C0" BoldFont="No"/>
+							<Item Name="User Keywords" Foreground="@themeData[0].User" Background="0x02000000" BoldFont="No"/>
+							<Item Name="User Types" Foreground="@themeData[0].User2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Warning" Foreground="@themeData[0].Error" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Attribute" Foreground="@themeData[1].Identifier" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Attribute Quotes" Foreground="@themeData[1].StringColor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Attribute Value" Foreground="@themeData[1].StringColor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Comment" Foreground="@themeData[1].Comment" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Delimiter" Foreground="@themeData[1].Operator" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Keyword" Foreground="@themeData[1].Keyword" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Markup Extension Class" Foreground="@themeData[1].Main" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Markup Extension Parameter Name" Foreground="@themeData[1].User" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Markup Extension Parameter Value" Foreground="@themeData[1].User2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Name" Foreground="@themeData[1].Main" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Processing Instruction" Foreground="@themeData[1].Preprocessor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Text" Foreground="@themeData[1].Foreground" Background="0x02000000" BoldFont="No"/>							
+							<Item Name="XML @@ Attribute" Foreground="@themeData[1].Identifier" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Attribute Quotes" Foreground="@themeData[1].StringColor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Attribute Value" Foreground="@themeData[1].StringColor" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Comment" Foreground="@themeData[1].Comment" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Delimiter" Foreground="@themeData[1].Operator" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Doc Attribute" Foreground="@themeData[1].User2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Doc Comment" Foreground="@themeData[1].Comment" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Doc Tag" Foreground="@themeData[1].User2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Keyword" Foreground="@themeData[1].Keyword" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Name" Foreground="@themeData[1].Main" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Processing Instruction" Foreground="0x0015496C" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Text" Foreground="@themeData[1].Foreground" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XSLT Keyword" Foreground="@themeData[1].Keyword" Background="0x02000000" BoldFont="No"/>																	
+						</Items>
+					</Category>
+				</Categories>
+			</FontsAndColors>
+		</Category>
+	</Category>
+</UserSettings>

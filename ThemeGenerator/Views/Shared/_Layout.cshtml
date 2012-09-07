@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+    <script type="text/javascript" src="/Content/farbtastic.js"></script>
+    <script type="text/javascript" src="/Content/slider.js"></script>
+    <link href="/Content/slider.css" rel="Stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/Content/farbtastic.css" type="text/css" />    
+</head>
+<body>
+    <div class="page">
+    <div id="header">
+        <img src="/content/frickinsweet.gif" alt="frickinsweet logo"/>
+    </div>
+        <div id="main">
+            @RenderBody()
+
+            <div id="footer">
+               Disclaimer Use this at your own risk. Back up your settings before using. <br /><a href="http://frickinsweet.com/ryanlanciaux.com">Ryan Lanciaux</a> &copy; Copyright 2008
+            </div>
+        </div>
+    </div>
+</body>
+</html>

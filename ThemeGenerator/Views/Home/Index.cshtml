@@ -1,0 +1,221 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+ <style type="text/css" media="screen">
+ 
+   .colorwell {
+     border: 2px solid #333333;
+     width: 6em;
+     text-align: center;
+     cursor: pointer;
+   }
+   a img {
+    border:0px;
+   }
+   body .colorwell-selected {
+     border: 2px solid #000;
+     font-weight: bold;
+   }  
+
+   table{
+   	background-color:#FFFFFF;
+   	border:0px;
+   	border-color:#FFFFFF;
+   }
+   
+   td{
+   	vertical-align:top;
+   	background-color:#FFFFFF;
+   	border:0px;
+   	border-color:#FFFFFF;
+   }
+    .error
+    {
+        font-weight:bold;
+        color:#FF0080;
+    }
+    
+    .form-item{
+        margin-bottom:12px;
+    }
+    .right{
+        text-align:right;
+    }
+    
+    #settings{
+        float:left;
+    }
+    
+    #right_content{
+        margin-top:20px;
+        margin-left:440px;
+        width:400px;
+    }
+    
+    #recolor{
+        border:2px solid #333333;
+        padding-left:5px;
+    }
+    #refresh_button{
+        background-color:#FFFFFF;
+    }
+    #code table{
+        text-align:left;        
+    }
+ 
+fieldset{
+    width:400px;
+    overflow:hidden;
+    border:0px;
+    margin:0px;
+    padding:0px;    
+}
+
+h2{
+    padding:2px;
+    margin:2px;
+}
+   
+ </style>
+ 
+ <script type="text/javascript" charset="utf-8">
+     $(document).ready(function () {
+         $('#js').hide();
+         var f = $.farbtastic('#farbtastic');
+         var selected;
+         var loadColor = function () {
+             $.getJSON(
+                "/Home/DemoColors",
+                {
+                    forecolor: $("#forecolor").val(), backcolor: $("#backcolor").val(),
+                    maincolor: $("#maincolor").val(), contrast: $("#contrast").val(),
+                    markupLowContrast: $("#lowcontrast:checked").attr('checked')
+                },
+                function (data) {
+                    $(".code").css("background-color", data.Background);
+                    $(".comment").css("color", data.Comment);
+                    $(".keyword").css("color", data.Keyword);
+                    $(".identifier").css("color", data.Identifier);
+                    $(".usertype").css("color", data.User);
+                    $(".usertype2").css("color", data.User2);
+                    $(".string").css("color", data.StringColor);
+                    $(".preprocessor").css("color", data.Preprocessor);
+                    $(".number").css("color", data.NumberColor);
+                });
+         };
+         loadColor();
+         $("#refresh").click(function () {
+             loadColor();
+         });
+
+         $('table').css("border-color", "#FFFFFF");
+         $('.colorwell')
+            .each(function () { f.linkTo(this); $(this).css('opacity', 0.75); })
+            .focus(function () {
+                if (selected) {
+                    $(selected).css('opacity', 0.75).css('background-color', '#0D0D0D;').removeClass('colorwell-selected');
+                }
+                f.linkTo(this);
+                p.css('opacity', 1);
+                $(selected = this).css('opacity', 1).addClass('colorwell-selected');
+            });
+
+         $(".form-item input").click(function () { $(".form-item").css('background-color', '#FFFFFF;'); $(this).parent().css('background-color', '#EDEDED;'); });
+         $('table').css("background-color", "#777777");
+
+
+     });
+ </script>
+
+
+<h1> Visual Studio Theme Generator </h1>
+<div id="js" style="color: red; font-size: 1.4em">JavaScript is required for this utility.</div>
+
+<form action="/Home/ThemeGenerator.vssettings" method="post" >
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="border:0px;">
+<h2>Color Settings</h2>    
+@if (@TempData.ContainsKey("Error"))
+{
+        <span class="error">@TempData["Error"].ToString()</span> <br /><br />
+}
+   <fieldset>          
+  <div id="farbtastic" style="float: right;"></div>
+  <div class="form-item right"><label for="backcolor">Background Color:</label><input type="text" id="backcolor" name="backcolor" class="colorwell" value="#383838" /></div>
+  <div class="form-item right"><label for="forecolor">Foreground Color:</label><input type="text" id="forecolor" name="forecolor" class="colorwell" value="#cfcfcf" /></div>
+  <div class="form-item right"><label for="maincolor">Main Color:</label><input type="text" id="maincolor" name="maincolor" class="colorwell" value="#2fcefe" /></div>
+  <div class="form-item right"><input type=checkbox id="lowcontrast" name="lowcontrast"/><label for="lowcontrast">Low Contrast Markup</label><div>
+  <br class="clear" />
+</fieldset>
+<h2>Contrast</h2>
+<fieldset>
+<p><input name="contrast" id="contrast" type="text" title="Contrast" class="fd_slider fd_range_0_180 fd_inc_10 fd_hide_input" value="110"  maxlength="3" /></p>
+</fieldset> <br /> 
+
+<fieldset class="right">
+      <input type="image" src="/content/generate.gif"/>
+</fieldset><br /><br />
+
+
+</td>
+<td style="border:0px;"> 
+    <a name="#link"><strong>Theme Generator</strong></a> by <a href="http://www.frickinsweet.com/ryanlanciaux.com">Ryan</a> and <a href="http://www.frickinsweet.com/joelroxor">Joel</a> <a href="http://www.frickinsweet.com/ryanlanciaux.com">Lanciaux</a>. <br /><br />
+    <div class="right" id="refresh_button"><a href="#"><img src="/content/refresh.gif" alt="refresh" id="refresh"/></a></div><br />
+            <div id="recolor" class="code">
+            <span class="preprocessor">#region "preprocessor"</span><br />
+            <span class="comment">//this is a comment</span><br />
+            <span class="keyword">public static string</span> <span class="identifier">ToHexString(</span><span class="keyword">this</span> <span class="usertype2">Color</span><span class="identifier"> c)</span><br />
+            <span class="identifier">{</span><br />
+            &nbsp;&nbsp;&nbsp;<span class="keyword">string</span> <span class="identifier">hex = </span><span class="string">&quot;00000000&quot;</span><span class="identifier">;</span><br />
+            &nbsp;&nbsp;&nbsp;<span class="identifier">hex += </span><span class="usertype">ColorTranslator</span><span class="identifier">.ToWin32(c).ToString(</span><span class="string">&quot;X&quot;</span><span class="identifier">);</span><br />
+            &nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="identifier">hex.Substring(hex.Length - </span><span class="number">8</span><span class="identifier">,</span> <span class="number">8</span><span class="identifier">);</span><br />
+            <span class="identifier">}</span><br />
+            <span class="preprocessor">#endregion</span><br />
+    </div>
+    
+    <br /><br /><strong>To Create A Theme</strong>
+    <ol>
+        <li>Select your Colors and Contrast settings on the left</li>
+        <li>Press refresh in the preview window</li>
+        <li>Click Create to save your new theme (ie users will need to file save as on the next screen)</li>
+    </ol><br />
+<strong>
+To install the new settings file:
+</strong>
+<ol>
+	<li>Click tools</li>
+	<li>Import and Export Settings</li>
+	<li>Choose &#39;Import Selected Environment Settings&#39; and click Next</li>
+	<li>Backup current settings and continue</li>
+
+	<li>Browse to the download location and click Next</li>
+	<li>The Next screen you can confirm that you&#39;re overwriting just the fonts and color and click Finish</li>
+</ol><br />
+    <strong>For best results try the following fonts:</strong>
+        <ul>
+            <li><a href="http://www.system7designs.com/blog/textmate-envy-aka-monaco-font-for-windows/" target="_blank">Monaco</a></li>
+            <li><a href="http://damieng.com/fonts/envy-code-r" target="_blank">Envy Code R</a></li>
+        </ul>    
+    <br />
+    <strong>Credits:</strong>
+    <ul>
+        <li>The initial theme was based off <a href="http://damieng.com/blog/2007/10/14/colour-schemes-for-visual-studio" target="_blank">HumaneStudio</a> by <a href="http://damieng.com/" target="_blank">Damien Guard</a>.</li>
+        <li><a href="http://acko.net/dev/farbtastic" target="_blank">Farbtastic</a> was used for the color selection</li>
+        <li><a href="http://www.frequency-decoder.com/2008/08/01/unobtrusive-slider-control-v2/" target="_blank">Frequency Decoder Slider</a> was used for contrast selection</li>
+    </ul>              
+</td></tr></table>
+
+
+</form>
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-1846690-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+</script>            
+
